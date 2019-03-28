@@ -18,6 +18,26 @@ ActiveRecord::Schema.define(version: 2019_03_27_222241) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "learners", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.string "gender"
+    t.integer "age"
+    t.string "street_address"
+    t.string "city"
+    t.string "state"
+    t.string "country"
+    t.string "nationality"
+    t.string "native_language"
+    t.string "interested_language1"
+    t.string "language1_level"
+    t.string "interested_language2"
+    t.string "language2_level"
+    t.string "introduction"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "people", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
