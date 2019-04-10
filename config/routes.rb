@@ -1,12 +1,17 @@
 Rails.application.routes.draw do
-  devise_for :users
-  root 'welcome#homepage'
+  resources :posts
+  root 'home#index'
+  # devise_for :users, :controllers => {:registrations => "my_devise/registrations"}
+  devise_for :users, controllers: { sessions: 'devise/sessions' }
   
-  get '/users/:id/matches', to: 'home#matches'
+  resources :messages, only: [:index, :new, :create, :destroy, :show] do
+    resources :contents, only: [:index, :new, :create]
+  end
   
   # show '/users/:id/matches', to: 'home#show'
+  show '/users/:id/matches', to: 'home#show'
   
-  
-  
-  
+  resources :languages do
+    delete 'remove'
+  end
 end
