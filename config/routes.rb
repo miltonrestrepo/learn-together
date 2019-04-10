@@ -11,4 +11,6 @@ Rails.application.routes.draw do
   
   get '/users/:id/matches', to: 'home#show', as: :match
   
+  show '/users/:id/matches', to: 'home#show'
+  
 end
