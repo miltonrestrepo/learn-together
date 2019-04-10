@@ -8,8 +8,8 @@ Rails.application.routes.draw do
     resources :contents, only: [:index, :new, :create]
   end
   
+  # get '/users/:id/matches', to: 'home#show'
   # show '/users/:id/matches', to: 'home#show'
-  show '/users/:id/matches', to: 'home#show'
   
   resources :languages do
     delete 'remove'
