@@ -4,5 +4,9 @@ Rails.application.routes.draw do
   
   get '/users/:id/matches', to: 'home#matches'
   
+  show '/users/:id/matches', to: 'home#show'
+  
+  
+  
   
 end
